@@ -1,6 +1,6 @@
-from dinov2.train import cg_test
-from dinov2 import train
+from dinov2.train import cg_test, main
+
 
 cg_test()
 
-train()
+main()
