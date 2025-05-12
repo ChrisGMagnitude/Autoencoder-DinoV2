@@ -300,6 +300,10 @@ def cg_test():
 def main(args):
     cfg = setup(args)
 
+    print(args)
+
+    print(cfg)
+
     model = SSLMetaArch(cfg).to(torch.device("cuda"))
     model.prepare_for_distributed_training()
 
