@@ -11,6 +11,7 @@ from typing import Callable, List, Optional, Tuple, Union
 
 import numpy as np
 import h5py
+import torch
 
 from .extended import ExtendedVisionDataset
 
