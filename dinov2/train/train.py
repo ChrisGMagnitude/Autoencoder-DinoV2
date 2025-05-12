@@ -132,6 +132,8 @@ def do_test(cfg, model, iteration):
 
 
 def do_train(cfg, model, resume=False):
+    print('cfg (do_train)',cfg)
+
     model.train()
     inputs_dtype = torch.half
     fp16_scaler = model.fp16_scaler  # for mixed precision training
@@ -298,12 +300,14 @@ def cg_test():
     print('Hello World')
 
 def main(args):
+
     cfg = setup(args)
 
     print(args)
 
     print(cfg)
 
+    stop
     model = SSLMetaArch(cfg).to(torch.device("cuda"))
     model.prepare_for_distributed_training()
 
