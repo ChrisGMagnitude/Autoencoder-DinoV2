@@ -293,6 +293,9 @@ def do_train(cfg, model, resume=False):
     metric_logger.synchronize_between_processes()
     return {k: meter.global_avg for k, meter in metric_logger.meters.items()}
 
+def cg_test():
+
+    print('Hello World')
 
 def main(args):
     cfg = setup(args)
