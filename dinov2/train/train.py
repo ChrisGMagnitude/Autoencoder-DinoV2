@@ -190,7 +190,7 @@ def do_train(cfg, model, resume=False):
     )
 
     # setup data loader
-
+    print('cfg.train.dataset_path',cfg.train.dataset_path)
     dataset = make_dataset(
         dataset_str=cfg.train.dataset_path,
         transform=data_transform,
