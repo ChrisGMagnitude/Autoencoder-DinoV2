@@ -28,7 +28,6 @@ class MagData(ExtendedVisionDataset):
                 transforms: Optional[Callable] = None,
                 transform: Optional[Callable] = None,
                 target_transform: Optional[Callable] = None,
-                hdf5_file, 
                 augment=True, crop_ranges=[[-1,2],[-3,5],[-10,20]], crop_jitter=[0.25,0.5,2], max_white_noise=0.05,ViT_im_size = False):
         """
         Arguments:
@@ -47,7 +46,11 @@ class MagData(ExtendedVisionDataset):
         self.ViT_im_size = ViT_im_size
            
         
-        
+        print('MagData')
+        print('root',root)
+        print('split',split)
+        stop
+
         
         
     def __len__(self):
