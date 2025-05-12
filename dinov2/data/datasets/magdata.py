@@ -14,7 +14,7 @@ import h5py
 import torch
 
 
-from torchvision.transforms import v2,compose
+from torchvision.transforms import v2,Compose
 
 from .extended import ExtendedVisionDataset
 
