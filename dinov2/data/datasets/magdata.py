@@ -21,7 +21,7 @@ _Target = int
 
 class MagData(ExtendedVisionDataset):
        def __init__(self, hdf5_file, 
-                    augment=True, crop_ranges=[[-1,2],[-3,5],[-10,20]], crop_jitter=[0.25,0.5,2], max_white_noise=0.05,ViT_im_size = False
+                    augment=True, crop_ranges=[[-1,2],[-3,5],[-10,20]], crop_jitter=[0.25,0.5,2], max_white_noise=0.05,ViT_im_size = False,
                     transforms: Optional[Callable] = None,
                     transform: Optional[Callable] = None,
                     target_transform: Optional[Callable] = None,):
