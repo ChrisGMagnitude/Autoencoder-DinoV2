@@ -51,7 +51,6 @@ class MagData(ExtendedVisionDataset):
         print('MagData')
         print('root',root)
         print('split',split)
-        stop
 
         
         

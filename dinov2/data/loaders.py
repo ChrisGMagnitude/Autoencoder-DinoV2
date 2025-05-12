@@ -84,7 +84,6 @@ def make_dataset(
     Returns:
         The created dataset.
     """
-    print('dataset_str1',dataset_str)
     logger.info(f'using dataset: "{dataset_str}"')
 
     class_, kwargs = _parse_dataset_str(dataset_str)
