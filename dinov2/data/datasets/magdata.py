@@ -13,6 +13,9 @@ import numpy as np
 import h5py
 import torch
 
+
+from torchvision.transforms import v2,compose
+
 from .extended import ExtendedVisionDataset
 
 
@@ -118,15 +121,15 @@ class MagData(ExtendedVisionDataset):
         rand = np.random.uniform(low=0,high=self.max_white_noise)
         
         if self.augment:
-            transformer = transforms.Compose([
-                                            transforms.v2.CenterCrop((crop_size,crop_size)),
-                                            transforms.v2.RandomRotation(degrees=(0, 360)),
-                                            transforms.v2.RandomHorizontalFlip(),
-                                            transforms.v2.GaussianNoise(sigma=rand)
+            transformer = Compose([
+                                            v2.CenterCrop((crop_size,crop_size)),
+                                            v2.RandomRotation(degrees=(0, 360)),
+                                            v2.RandomHorizontalFlip(),
+                                            v2.GaussianNoise(sigma=rand)
                                             ])
         else:
-            transformer = transforms.Compose([
-                                            transforms.v2.CenterCrop((crop_size,crop_size)),
+            transformer = Compose([
+                                            v2.CenterCrop((crop_size,crop_size)),
                                             ])
             
             
