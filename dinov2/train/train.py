@@ -305,7 +305,9 @@ def main(args):
 
     print(args)
 
-    print(cfg)
+    for key in cfg.keys:
+        print(key,cfg[key])
+    
 
     stop
     model = SSLMetaArch(cfg).to(torch.device("cuda"))
