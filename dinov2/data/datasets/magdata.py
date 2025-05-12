@@ -36,6 +36,8 @@ class MagData(ExtendedVisionDataset):
         """
         super().__init__(root, transforms, transform, target_transform)
 
+        hdf5_file = os.path.join(root,split.lower()+'.hsf5')
+
         self.hdf5_file = hdf5_file
         self.fh = h5py.File(self.hdf5_file, "r")
         self.crop_ranges = crop_ranges
