@@ -42,6 +42,7 @@ def _make_sample_transform(image_transform: Optional[Callable] = None, target_tr
 
 
 def _parse_dataset_str(dataset_str: str):
+    print('dataset_str',dataset_str)
     tokens = dataset_str.split(":")
 
     name = tokens[0]
