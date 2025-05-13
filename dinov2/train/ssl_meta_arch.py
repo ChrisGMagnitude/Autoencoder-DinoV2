@@ -44,7 +44,7 @@ class SSLMetaArch(nn.Module):
         logger.info(f"OPTIONS -- architecture : embed_dim: {embed_dim}")
         
         if cfg.student.pretrained_weights:
-            model = build_model_for_eval(cfg, args.pretrained_weights)
+            model = build_model_for_eval(cfg, cfg.student.pretrained_weights)
             
             chkpt = torch.load(cfg.student.pretrained_weights)
 
