@@ -138,4 +138,4 @@ class MagData(ExtendedVisionDataset):
             
         image = transformer(image)
         
-        return image.type(torch.float).numpy()
+        return image.type(torch.float)

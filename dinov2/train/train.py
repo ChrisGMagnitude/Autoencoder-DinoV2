@@ -132,7 +132,7 @@ def do_test(cfg, model, iteration):
 
 
 def do_train(cfg, model, resume=False):
-    print('cfg (do_train)',cfg)
+    #print('cfg (do_train)',cfg)
 
     model.train()
     inputs_dtype = torch.half
