@@ -44,12 +44,10 @@ class SSLMetaArch(nn.Module):
         logger.info(f"OPTIONS -- architecture : embed_dim: {embed_dim}")
         
         if cfg.student.pretrained_weights:
-            #model = build_model_for_eval(cfg, cfg.student.pretrained_weights)
-            
             chkpt = torch.load(cfg.student.pretrained_weights)
-
-            print("Saved model keys:", chkpt.keys())
-            #print("Current model keys:", model.keys())
+            logger.info(f"OPTIONS -- pretrained weights: loading from {cfg.student.pretrained_weights}")
+            student_backbone.load_state_dict(chkpt, strict=False)
+            
             stop
             #chkpt = torch.load(cfg.student.pretrained_weights)
             #logger.info(f"OPTIONS -- pretrained weights: loading from {cfg.student.pretrained_weights}")
