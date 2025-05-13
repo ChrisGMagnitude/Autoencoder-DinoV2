@@ -73,7 +73,9 @@ class MagData(ExtendedVisionDataset):
 
         #sample = [image]
         
-
+        if self.transforms is not None:
+            image, target = self.transforms(image, target)
+            
         return image, 0
         
     def clip_and_normalise_data(self,image):
