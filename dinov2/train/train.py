@@ -272,6 +272,7 @@ def do_train(cfg, model, resume=False):
                 torch.distributed.all_reduce(v)
         loss_dict_reduced = {k: v.item() / distributed.get_global_size() for k, v in loss_dict.items()}
 
+        print('loss_dict_reduced',loss_dict_reduced)
         if math.isnan(sum(loss_dict_reduced.values())):
             logger.info("NaN detected")
             raise AssertionError
