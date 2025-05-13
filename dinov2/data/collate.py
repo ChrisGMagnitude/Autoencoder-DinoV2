@@ -9,12 +9,6 @@ import random
 
 def collate_data_and_cast(samples_list, mask_ratio_tuple, mask_probability, dtype, n_tokens=None, mask_generator=None):
     # dtype = torch.half  # TODO: Remove
-    print(len(samples_list))
-    print(len(samples_list[0]))
-    print(len(samples_list[0][0]))
-    print(samples_list[0][0])
-    print('samples_list',samples_list[0][0].shape)
-
 
     n_global_crops = len(samples_list[0][0]["global_crops"])
     n_local_crops = len(samples_list[0][0]["local_crops"])
