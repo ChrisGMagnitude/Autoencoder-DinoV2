@@ -26,3 +26,15 @@ dino:
   head_nlayers: 3
   head_hidden_dim: 2048
   koleo_loss_weight: 0.1
+crops:
+  global_crops_scale:
+  - 0.62
+  - 1.0
+  local_crops_number: 8
+  local_crops_scale:
+  - 0.32
+  - 0.62
+  global_crops_size: 224
+  local_crops_size: 96
+evaluation:
+  eval_period_iterations: 1000
