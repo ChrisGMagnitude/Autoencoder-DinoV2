@@ -48,8 +48,8 @@ class SSLMetaArch(nn.Module):
             
             chkpt = torch.load(cfg.student.pretrained_weights)
 
-            #print("Saved model keys:", chkpt.keys())
-            print("Current model keys:", model.keys())
+            print("Saved model keys:", chkpt.keys())
+            #print("Current model keys:", model.keys())
             stop
             #chkpt = torch.load(cfg.student.pretrained_weights)
             #logger.info(f"OPTIONS -- pretrained weights: loading from {cfg.student.pretrained_weights}")
