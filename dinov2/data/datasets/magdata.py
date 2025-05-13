@@ -113,7 +113,7 @@ class MagData(ExtendedVisionDataset):
         
     def apply_transforms(self,image):
         
-        #image = torch.from_numpy(image)
+        image = torch.from_numpy(image)
         
         
         if self.ViT_im_size:
@@ -138,4 +138,4 @@ class MagData(ExtendedVisionDataset):
             
         image = transformer(image)
         
-        return image.type(torch.float)
+        return image.type(torch.float).numpy()
