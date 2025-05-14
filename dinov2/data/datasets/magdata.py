@@ -128,7 +128,7 @@ class MagData(ExtendedVisionDataset):
                                             v2.CenterCrop((crop_size,crop_size)),
                                             v2.RandomRotation(degrees=(0, 360)),
                                             v2.RandomHorizontalFlip(),
-                                            v2.GaussianNoise(sigma=rand)
+                                            #v2.GaussianNoise(sigma=rand)
                                             ])
         else:
             transformer = Compose([
