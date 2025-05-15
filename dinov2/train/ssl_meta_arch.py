@@ -47,7 +47,12 @@ class SSLMetaArch(nn.Module):
             print('loading_pretrained')
             student_backbone = torch.hub.load('facebookresearch/dinov2', 'dinov2_vitb14_lc')
 
-
+            for name, param in student_backbone.backbone.named_parameters():
+                if 'blocks.10' in name or 'blocks.11' in name:
+                    param.requires_grad = True
+                    print(name)
+                else:
+                    param.requires_grad = False
             #chkpt = torch.load(cfg.student.pretrained_weights)
             #logger.info(f"OPTIONS -- pretrained weights: loading from {cfg.student.pretrained_weights}")
             #student_backbone = chkpt
