@@ -42,7 +42,7 @@ student:
   drop_path_rate: 0.3
   layerscale: 1.0e-05
   drop_path_uniform: true
-  pretrained_weights: ''
+  pretrained_weights: '/home/magnitude/Code/Autoencoder-DinoV2/pretrained_weights/dinov2_vitb14_pretrain.pth'
   ffn_layer: "mlp"
   block_chunks: 0
   qkv_bias: true
