@@ -15,6 +15,7 @@ dependencies:
   - fvcore
   - iopath
   - xformers::xformers=0.0.18
+  - h5py
   - pip
   - pip:
     - git+https://github.com/facebookincubator/submitit
