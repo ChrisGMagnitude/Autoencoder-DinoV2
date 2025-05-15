@@ -249,11 +249,11 @@ def do_train(cfg, model, resume=False):
 
         optimizer.zero_grad(set_to_none=True)
 
-        print(data['collated_local_crops'])
-        print(data['collated_local_crops'].shape)
+        #print(data['collated_local_crops'])
+        #print(data['collated_local_crops'].shape)
         loss_dict = model.forward_backward(data, teacher_temp=teacher_temp)
 
-        print('loss_dict',loss_dict)
+        #print('loss_dict',loss_dict)
 
         # clip gradients
 
