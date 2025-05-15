@@ -59,7 +59,7 @@ class SSLMetaArch(nn.Module):
             chkpt = torch.load(cfg.student.pretrained_weights)
             print(chkpt.keys())
             logger.info(f"OPTIONS -- pretrained weights: loading from {cfg.student.pretrained_weights}")
-            student_backbone.load_state_dict(chkpt["model"], strict=False)
+            student_backbone.load_state_dict(chkpt, strict=False)
 
         student_model_dict["backbone"] = student_backbone
         teacher_model_dict["backbone"] = student_backbone
