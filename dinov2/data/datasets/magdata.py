@@ -75,6 +75,7 @@ class MagData(ExtendedVisionDataset):
         target = 0
         print(image)
         print(type(image))
+        print(image.shape)
         if np.any(np.isnan(image)):
             print(image)
             print('pretransform')
