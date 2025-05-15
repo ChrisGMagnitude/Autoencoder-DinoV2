@@ -44,6 +44,7 @@ class SSLMetaArch(nn.Module):
         logger.info(f"OPTIONS -- architecture : embed_dim: {embed_dim}")
         
         if cfg.student.pretrained_weights:
+            print('loading_pretrained')
             student_backbone = torch.hub.load('facebookresearch/dinov2', 'dinov2_vitb14_lc')
 
 
