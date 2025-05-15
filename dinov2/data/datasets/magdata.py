@@ -83,13 +83,13 @@ class MagData(ExtendedVisionDataset):
             stop
         if self.transforms is not None:
             image, target = self.transforms(image, target)
-        print(image)
+        #print(image)
         if torch.isnan(image['local_crops']).any():
-            print(image['local_crops']) 
+            #print(image['local_crops']) 
             print('local_crops posttransform')
             stop
         if torch.isnan(image['global_crops']).any():
-            print(image['global_crops']) 
+            #print(image['global_crops']) 
             print('global_crops posttransform')
             stop
 
