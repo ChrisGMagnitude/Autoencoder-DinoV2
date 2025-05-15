@@ -134,8 +134,8 @@ def do_test(cfg, model, iteration):
 def do_train(cfg, model, resume=False):
     #print('cfg (do_train)',cfg)
 
-    #for name, param in model.named_parameters():
-    #    print(name, torch.isfinite(param.grad).all())
+    for name, param in model.student.named_parameters():
+        print(name, torch.isfinite(param.grad).all())
     model.train()
 
     
@@ -248,6 +248,9 @@ def do_train(cfg, model, resume=False):
         # compute losses
 
         optimizer.zero_grad(set_to_none=True)
+
+        print(data)
+
         loss_dict = model.forward_backward(data, teacher_temp=teacher_temp)
 
         print('loss_dict',loss_dict)
