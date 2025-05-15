@@ -250,6 +250,10 @@ class SSLMetaArch(nn.Module):
         loss_dict = {}
 
         loss_accumulator = 0  # for backprop
+
+        for name, param in student_backbone.backbone.named_parameters():
+            print(name,param.shape)
+
         student_global_backbone_output_dict, student_local_backbone_output_dict = self.student.backbone(
             [global_crops, local_crops], masks=[masks, None], is_training=True
         )
