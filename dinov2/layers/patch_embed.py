@@ -74,9 +74,12 @@ class PatchEmbed(nn.Module):
 
         self.proj.to(x, non_blocking=True)
         x = self.proj(x)  # B C H W
+        print('a',x.shape)
         H, W = x.size(2), x.size(3)
         x = x.flatten(2).transpose(1, 2)  # B HW C
+        print('b',x.shape)
         x = self.norm(x)
+        print('c',x.shape)
         print(self.flatten_embedding)
         stop
         if not self.flatten_embedding:
