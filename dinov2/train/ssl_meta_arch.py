@@ -256,7 +256,8 @@ class SSLMetaArch(nn.Module):
 
         print('global_crops.shape',global_crops.shape)
         print('local_crops.shape',local_crops.shape)
-        
+        print('masks.shape',masks.shape)
+
         student_global_backbone_output_dict, student_local_backbone_output_dict = self.student.backbone(
             [global_crops, local_crops], masks=[masks, None], is_training=True
         )
