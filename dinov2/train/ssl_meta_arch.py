@@ -45,17 +45,23 @@ class SSLMetaArch(nn.Module):
         
         if cfg.student.pretrained_weights:
             print('loading_pretrained')
-            #student_backbone = torch.hub.load('facebookresearch/dinov2', 'dinov2_vitb14_lc')
 
-
-            #chkpt = torch.load(cfg.student.pretrained_weights)
-            #logger.info(f"OPTIONS -- pretrained weights: loading from {cfg.student.pretrained_weights}")
-            #student_backbone = chkpt
-            
             chkpt = torch.load(cfg.student.pretrained_weights)
             logger.info(f"OPTIONS -- pretrained weights: loading from {cfg.student.pretrained_weights}")
             student_backbone.load_state_dict(chkpt, strict=False)
 
+        
+        #for name, param in student_backbone.backbone.named_parameters():
+        #        if 'blocks.10' in name or 'blocks.11' in name:
+        #            param.requires_grad = True
+        #            print(name)
+        #        else:
+        #            param.requires_grad = False
+
+        student_model_dict["backbone"] = student_backbone
+        teacher_model_dict["backbone"] = teacher_backbone
+        logger.info(f"OPTIONS -- architecture : embed_dim: {embed_dim}")
+        
         self.embed_dim = embed_dim
         self.dino_out_dim = cfg.dino.head_n_prototypes
 
