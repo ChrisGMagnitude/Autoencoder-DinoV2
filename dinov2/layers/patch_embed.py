@@ -81,7 +81,7 @@ class PatchEmbed(nn.Module):
         x = self.norm(x)
         print('c',x.shape)
         print(self.flatten_embedding)
-        stop
+        #stop
         if not self.flatten_embedding:
             x = x.reshape(-1, H, W, self.embed_dim)  # B H W C
         return x
