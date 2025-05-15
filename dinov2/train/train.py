@@ -134,8 +134,8 @@ def do_test(cfg, model, iteration):
 def do_train(cfg, model, resume=False):
     #print('cfg (do_train)',cfg)
 
-    for name, param in model.named_parameters():
-        print(name, torch.isfinite(param.grad).all())
+    #for name, param in model.named_parameters():
+    #    print(name, torch.isfinite(param.grad).all())
     model.train()
 
     
