@@ -249,8 +249,8 @@ def do_train(cfg, model, resume=False):
 
         optimizer.zero_grad(set_to_none=True)
 
-        print(data)
-
+        print(data['collated_local_crops'])
+        print(data['collated_local_crops'].shape)
         loss_dict = model.forward_backward(data, teacher_temp=teacher_temp)
 
         print('loss_dict',loss_dict)
