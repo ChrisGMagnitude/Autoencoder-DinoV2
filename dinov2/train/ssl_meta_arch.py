@@ -51,12 +51,12 @@ class SSLMetaArch(nn.Module):
             student_backbone.load_state_dict(chkpt, strict=False)
 
         
-        for name, param in student_backbone.named_parameters():
-                if 'blocks.10' in name or 'blocks.11' in name:
-                    param.requires_grad = True
-                    print(name)
-                else:
-                    param.requires_grad = False
+        #for name, param in student_backbone.named_parameters():
+        #        if 'blocks.10' in name or 'blocks.11' in name:
+        #            param.requires_grad = True
+        #            print(name)
+        #        else:
+        #            param.requires_grad = False
 
         student_model_dict["backbone"] = student_backbone
         teacher_model_dict["backbone"] = teacher_backbone
