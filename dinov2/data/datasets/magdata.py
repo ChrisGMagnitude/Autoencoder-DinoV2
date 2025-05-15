@@ -73,6 +73,8 @@ class MagData(ExtendedVisionDataset):
 
         #sample = [image]
         target = 0
+        print(image)
+        print(type(image))
         if np.any(np.isnan(image)):
             print(image)
             print('pretransform')
@@ -80,7 +82,7 @@ class MagData(ExtendedVisionDataset):
         if self.transforms is not None:
             image, target = self.transforms(image, target)
         if np.any(np.isnan(image)):
-            print(image)
+            print(image) 
             print('posttransform')
             stop
 
