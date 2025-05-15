@@ -62,11 +62,11 @@ class DataAugmentationDINO(object):
         # color distorsions / blurring
         color_jittering = transforms.Compose(
             [
-                transforms.RandomApply(
-                    [transforms.ColorJitter(brightness=0.4, contrast=0.4, saturation=0.2, hue=0.1)],
-                    p=0.8,
-                ),
-                transforms.RandomGrayscale(p=0.2),
+                #transforms.RandomApply(
+                #    [transforms.ColorJitter(brightness=0.4, contrast=0.4, saturation=0.2, hue=0.1)],
+                #    p=0.8,
+                #),
+                #transforms.RandomGrayscale(p=0.2),
             ]
         )
 
@@ -85,7 +85,7 @@ class DataAugmentationDINO(object):
         self.normalize = transforms.Compose(
             [
                 #transforms.ToTensor(),
-                make_normalize_transform(),
+                #make_normalize_transform(),
             ]
         )
 
