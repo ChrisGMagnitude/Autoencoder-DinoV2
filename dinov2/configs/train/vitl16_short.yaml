@@ -37,7 +37,7 @@ crops:
 evaluation:
   eval_period_iterations: 1000
 student:
-  arch: vit_large
+  arch: vit_base
   patch_size: 14
   drop_path_rate: 0.3
   layerscale: 1.0e-05
