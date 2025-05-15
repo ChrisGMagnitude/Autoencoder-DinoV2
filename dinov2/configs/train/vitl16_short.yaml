@@ -51,3 +51,9 @@ student:
   num_register_tokens: 0
   interpolate_antialias: false
   interpolate_offset: 0.1
+teacher:
+  momentum_teacher: 0.992
+  final_momentum_teacher: 1
+  warmup_teacher_temp: 0.04
+  teacher_temp: 0.0007
+  warmup_teacher_temp_epochs: 30
