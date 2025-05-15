@@ -77,13 +77,13 @@ class MagData(ExtendedVisionDataset):
         print(type(image))
         print(image.shape)
         print(sum(torch.isnan(image)))
-        if sum(torch.isnan(image))>1:
+        if torch.isnan(image).any():
             print(image)
             print('pretransform')
             stop
         if self.transforms is not None:
             image, target = self.transforms(image, target)
-        if sum(torch.isnan(image))>1:
+        if torch.isnan(image).any():
             print(image) 
             print('posttransform')
             stop
