@@ -72,7 +72,7 @@ class MagData(ExtendedVisionDataset):
         image = self.apply_transforms(image)
 
         #Add noise
-        image = image + (0.02**0.5)*torch.randn(image.shape)
+        image = image + (0.002**0.5)*torch.randn(image.shape)
 
         #sample = [image]
         target = 0
