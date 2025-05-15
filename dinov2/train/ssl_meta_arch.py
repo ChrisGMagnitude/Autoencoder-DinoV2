@@ -251,6 +251,7 @@ class SSLMetaArch(nn.Module):
 
         loss_accumulator = 0  # for backprop
 
+        print(self.student.backbone)
         for name, param in self.student.backbone.named_parameters():
             print(name,param.shape)
 
