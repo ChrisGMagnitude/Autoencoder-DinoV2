@@ -8,8 +8,8 @@ optim:
   weight_decay_end: 0.4
   base_lr: 1.0e-3  # learning rate for a batch size of 1024
   lr: 0.  # will be set after applying scaling rule
-  warmup_epochs: 1
-  min_lr: 1.0e-10
+  warmup_epochs: 10
+  min_lr: 1.0e-06
   clip_grad: 3.0
   freeze_last_layer_epochs: 1
   scaling_rule: sqrt_wrt_1024
