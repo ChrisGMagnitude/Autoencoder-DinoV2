@@ -28,7 +28,7 @@ crops:
   global_crops_scale:
   - 0.62
   - 1.0
-  local_crops_number: 8
+  local_crops_number: 2
   local_crops_scale:
   - 0.32
   - 0.62
